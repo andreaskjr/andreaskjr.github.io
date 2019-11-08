@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<style>
+  #bostonImage {
+    width: 600px;
+    height: auto;
+    border-color: black;
+    border: 5px solid #29b6cf;
+    float: right;
+    border-radius: 20px;
+  }
+  #pageTitle {
+    size: 20px;
+    color: white;
+    float: left;
+    font-family: "Times New Roman";
+  }
+  #pageUndertitle {
+    size: 10px;
+    color: white;
+    font-family: "Times New Roman";
+    clear: left;
+  }
+  #randomFact {
+    color: white;
+    size: 10px;
+    font-family: "Times New Roman";
+  }
+  body {
+    background-color: #29b6cf;
+  }
+  .mapcontainer {
+    display: none;
+  }
+</style>
+<html>
+  <head>
+    <title>Boston 3y</title>
+  </head>
+  <body>
+    <!-- Dette er hoveddelen af hjemmesiden -->
+    <img id="bostonImage" src="imageBoston.jpg">
+    <h1 id="pageTitle">Boston, Massachusetts</h1>
+    <p id="pageUndertitle">Boston er hovedstad i den amerikanske delstat <i>Massachusetts</i> og den største by i hele <i>New England</i>-området. <br>I 2012 havde byen 636,000 indbyggere. Storboston med forstæder omfatter 4,5 millioner indbyggere. <br>Boston er administrativt centrum i det amerikanske county Suffolk County.</p>
+
+    <button type="button" onclick="randomMaps();">Random Tourist Attraction</button>
+
+    <!-- MAPS -->
+    <div style="float: left;" id="mapDiv">
+      <!-- Default map -->
+      <div class="mapcontainer" id="map1" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Boston%2C%20Massachusetts+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+
+      <!-- Fenway Park -->
+      <div class="mapcontainer" id="map2" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Fenway%20Park+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+
+      <!-- Harvard -->
+      <div class="mapcontainer" id="map3" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Harvard%20University+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+
+      <!-- MIT -->
+      <div class="mapcontainer" id="map4" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=MIT+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+
+      <!-- Boston Common -->
+      <div class="mapcontainer" id="map5" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=boston%20common+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+
+      <!-- Museum of Science -->
+      <div class="mapcontainer" id="map6" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=museum%20of%20science%20boston+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+
+      <!-- JFK Presidential Museum -->
+      <div class="mapcontainer" id="map7" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=jfk%20museum+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+
+      <!-- New England Aquarium -->
+      <div class="mapcontainer" id="map8" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=new%20england%20aquarium+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+    </div>
+    <!-- Random Fact -->
+    <div id="factsDiv" style="float: right;">
+      <button type="button" onclick="randomFact();">Random Fact</button>
+      <p id="randomFact"></p>
+    <br>
+  </body>
+</html>
+<script>
+
+  var fact = document.getElementById("randomFact");
+
+  var facts = [
+  "Boston is actually named after a town in England",
+  "The first American lighthouse was built in Boston Harbor in 1716",
+  "Boston is home to the oldest public park in the U.S.",
+  "'Happy Hours' are against the law",
+  "The Fig Newton is named after a Boston suburb",
+  "The Red Sox have a patent on a color",
+  "Boston was home to the first U.S. chocolate factory",
+  "A deadly wave of molasses once flooded the North End",
+  "In turn-of-the-century Boston, you didn’t need to take a test to receive a driver’s license",
+  "The first U.S. subway was built here",
+  "Beantown really is about baked beans",
+  "You can drive 90 feet below the earth’s surface in Boston",
+  "Christmas was once banned",
+  "Boston is home to the first U.S. public beach",
+  "Boston gave us candlepin bowling",
+  "$100 million in paintings was stolen from a Boston museum",
+  "Some of Hollywood’s most recognizable stars are Bostonians",
+  "Bostonians get the weather from a skyscraper"
+];
+
+  document.getElementById("map1").style.display = "inline";
+
+  function randomFact() {
+    fact.innerHTML = facts[Math.floor(Math.random() * facts.length)];
+  }
+
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function randomMaps() {
+    var mapContainers = document.getElementsByClassName("mapcontainer");
+    for(var i = 0; i < mapContainers.length; i++) {
+      mapContainers[i].style.display = "none";
+    }
+    var thisMap = document.getElementById("map" + getRandomInt(2,8));
+    thisMap.style.display = "inline";
+  }
+
+</script>
