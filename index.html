@@ -71,15 +71,14 @@
       <div class="mapcontainer" id="map8" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=new%20england%20aquarium+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
     </div>
     <!-- Random Fact -->
-    <div id="factsDiv" style="float: right;">
-      <button type="button" onclick="randomFact();">Random Fact</button>
-      <p id="randomFact"></p>
-    <br>
+    <button type="button" onclick="randomFact();" style="float: right;">Random Fact</button>
+    <p id="randomFact" style="clear: right; float: right;"></p>
   </body>
 </html>
 <script>
 
   var fact = document.getElementById("randomFact");
+  var lastNumber = 0;
 
   var facts = [
   "Boston is actually named after a town in England",
@@ -120,7 +119,6 @@
       mapContainers[i].style.display = "none";
     }
     var thisMap = document.getElementById("map" + getRandomInt(2,8));
-    thisMap.style.display = "inline";
+    thisMap.style.display = "block";
   }
-
 </script>
