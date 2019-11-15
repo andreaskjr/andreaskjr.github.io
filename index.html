@@ -1,125 +1,153 @@
 <!DOCTYPE html>
 <style>
   #bostonImage {
-    width: 600px;
+    width: 45vw;
     height: auto;
-    border-color: black;
-    border: 5px solid #29b6cf;
-    float: right;
-    border-radius: 20px;
-  }
-  #pageTitle {
-    size: 20px;
-    color: white;
-    float: left;
-    font-family: "Times New Roman";
-  }
-  #pageUndertitle {
-    size: 10px;
-    color: white;
-    font-family: "Times New Roman";
-    clear: left;
-  }
-  #randomFact {
-    color: white;
-    size: 10px;
-    font-family: "Times New Roman";
+    right: 2%;
+    border-radius: 10px;
+    position: absolute;
+    top: 160px;
+    z-index: -1;
   }
   body {
-    background-color: #29b6cf;
+    background-color: #E5E5E5;
   }
-  .mapcontainer {
-    display: none;
-    border-radius: 20px;
+  #header {
+    background-color: #1F567C;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    width: 100vw;
+    height: 100px;
+    margin: 0px;
+    z-index: 1;
+  }
+  #navigation {
+    background-color: lightgray;
+    position: fixed;
+    top: 100px;
+    width: 100vw;
+    left: 0%;
+    height: 46px;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
+  }
+  .weatherwidget-io {
+    margin: 0px;
+  }
+  div.footer {
+    background-color: lightgray;
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    left: 0%;
+    height: 20px;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
+  }
+  p.footer {
+    color: gray;
+    font-size: 15px;
+    font-family: Cambria;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+  }
+  li {
+    float: left;
+  }
+  li a {
+    display: block;
+    padding: 8px;
+    color: gray;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Cambria;
+  }
+  li a:hover {
+    background-color: #acacac;
+    color: white;
+  }
+  .active {
+    background-color: #1F567C;
+    color: white;
+  }
+  h1 {
+    font-family: Cambria;
+  }
+  #title {
+    top: 140px;
+    left: 2%;
+    position: absolute;
+  }
+  #hovedtekst {
+    border: 3px;
+    position: absolute;
+    top: 190px;
+    left: 2%;
+    width: 50vw;
+    z-index: -1;
+  }
+  p {
+    font-family: Cambria;
+  }
+  #learnMore {
+    position: absolute;
+    display: block;
+    clear: both;
+    padding: 8px;
+    background-color: #1F567C;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Cambria;
+    top: 400px;
+    left: 2%;
+  }
+  #learnMore:hover {
+    background-color: #acacac;
+
   }
 </style>
 <html>
   <head>
-    <title>Boston 3y</title>
+    <title>Boston 2017y</title>
   </head>
   <body>
-    <!-- Dette er hoveddelen af hjemmesiden -->
-    <img id="bostonImage" src="imageBoston.jpg">
-    <h1 id="pageTitle">Boston, Massachusetts</h1>
-    <p id="pageUndertitle">Boston er hovedstad i den amerikanske delstat <i>Massachusetts</i> og den største by i hele <i>New England</i>-området. <br>I 2012 havde byen 636,000 indbyggere. Storboston med forstæder omfatter 4,5 millioner indbyggere. <br>Boston er administrativt centrum i det amerikanske county Suffolk County.</p>
-
-    <button type="button" onclick="randomMaps();">Random Tourist Attraction</button>
-
-    <!-- MAPS -->
-    <div style="float: left;" id="mapDiv">
-      <!-- Default map -->
-      <div class="mapcontainer" id="map1" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Boston%2C%20Massachusetts+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
-
-      <!-- Fenway Park -->
-      <div class="mapcontainer" id="map2" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Fenway%20Park+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
-
-      <!-- Harvard -->
-      <div class="mapcontainer" id="map3" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Harvard%20University+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
-
-      <!-- MIT -->
-      <div class="mapcontainer" id="map4" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=MIT+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
-
-      <!-- Boston Common -->
-      <div class="mapcontainer" id="map5" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=boston%20common+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
-
-      <!-- Museum of Science -->
-      <div class="mapcontainer" id="map6" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=museum%20of%20science%20boston+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
-
-      <!-- JFK Presidential Museum -->
-      <div class="mapcontainer" id="map7" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=jfk%20museum+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
-
-      <!-- New England Aquarium -->
-      <div class="mapcontainer" id="map8" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=new%20england%20aquarium+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+    <div id="header">
+      <a class="weatherwidget-io" href="https://forecast7.com/da/42d36n71d06/boston/" data-label_1="BOSTON" data-mode="Current" data-theme="original" >BOSTON</a>
     </div>
-    <!-- Random Fact -->
-    <button type="button" onclick="randomFact();" style="float: right;">Random Fact</button>
-    <p id="randomFact" style="clear: right; float: right;"></p>
+    <div id="navigation">
+      <ul>
+        <li><a href="index.html" class="active">Forside</a></li>
+        <li><a href="om-boston.html">Om Boston</a></li>
+        <li><a href="billeder.html">Billeder</a></li>
+        <li><a href="gode-tips.html">Gode Tips</a></li>
+      </ul>
+    </div>
+    <div class="main">
+      <h1 id="title">Velkommen til Boston</h1>
+      <div id="hovedtekst">
+        <p id="afsnit 1">Boston er hovedstad i den amerikanske delstat Massachusetts og den største by i hele New England-området. I 2012 havde byen 636,000 indbyggere. Storboston med forstæder omfatter 4,5 millioner indbyggere. Boston er administrativt centrum i det amerikanske county Suffolk County. <br><br> Klik rundt på denne side for at lære mere om 2017y's rejse til Boston.</p>
+      </div>
+      <img id="bostonImage" src="imageBoston.jpg">
+      <a id="learnMore" href="om-boston.html">Lær mere om Boston</a>
+    </div>
+    <div class="footer">
+      <p class="footer">Lavet af Andreas - 2019</p>
+    </div>
   </body>
 </html>
 <script>
-
-  var fact = document.getElementById("randomFact");
-  var lastNumber = 0;
-
-  var facts = [
-  "Boston is actually named after a town in England",
-  "The first American lighthouse was built in Boston Harbor in 1716",
-  "Boston is home to the oldest public park in the U.S.",
-  "'Happy Hours' are against the law",
-  "The Fig Newton is named after a Boston suburb",
-  "The Red Sox have a patent on a color",
-  "Boston was home to the first U.S. chocolate factory",
-  "A deadly wave of molasses once flooded the North End",
-  "In turn-of-the-century Boston, you didn’t need to take a test to receive a driver’s license",
-  "The first U.S. subway was built here",
-  "Beantown really is about baked beans",
-  "You can drive 90 feet below the earth’s surface in Boston",
-  "Christmas was once banned",
-  "Boston is home to the first U.S. public beach",
-  "Boston gave us candlepin bowling",
-  "$100 million in paintings was stolen from a Boston museum",
-  "Some of Hollywood’s most recognizable stars are Bostonians",
-  "Bostonians get the weather from a skyscraper"
-];
-
-  document.getElementById("map1").style.display = "inline";
-
-  function randomFact() {
-    fact.innerHTML = facts[Math.floor(Math.random() * facts.length)];
-  }
-
-  function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  function randomMaps() {
-    var mapContainers = document.getElementsByClassName("mapcontainer");
-    for(var i = 0; i < mapContainers.length; i++) {
-      mapContainers[i].style.display = "none";
-    }
-    var thisMap = document.getElementById("map" + getRandomInt(2,8));
-    thisMap.style.display = "block";
-  }
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>

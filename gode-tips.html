@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<style>
+  body {
+    background-color: #E5E5E5;
+  }
+  #header {
+    background-color: #1F567C;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    width: 100vw;
+    height: 100px;
+    margin: 0px;
+    z-index: 1;
+  }
+  #navigation {
+    background-color: lightgray;
+    position: fixed;
+    top: 100px;
+    width: 100vw;
+    left: 0%;
+    height: 46px;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
+  }
+  .weatherwidget-io {
+    margin: 0px;
+  }
+  div.footer {
+    background-color: lightgray;
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    left: 0%;
+    height: 20px;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
+  }
+  p.footer {
+    color: gray;
+    font-size: 15px;
+    font-family: Cambria;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+  }
+  li {
+    float: left;
+  }
+  li a {
+    display: block;
+    padding: 8px;
+    color: gray;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Cambria;
+  }
+  li a:hover {
+    background-color: #acacac;
+    color: white;
+  }
+  .active {
+    background-color: #1F567C;
+    color: white;
+  }
+  h1 {
+    font-family: Cambria;
+  }
+  p {
+    font-family: Cambria;
+  }
+  #titel {
+    left: 2%;
+    top: 140px;
+    position: absolute;
+  }
+  #brødtekst {
+    left: 2%;
+    top: 190px;
+    position: absolute;
+    width: 30vw;
+  }
+  #mapDiv {
+    right: 2%;
+    top: 190px;
+    position: absolute;
+  }
+  .mapcontainer {
+    border-radius: 10px;
+    display: none;
+  }
+  #map1 {
+    display: inline;
+  }
+  #randomMap {
+    position: absolute;
+    left: 2%;
+    top: 350px;
+  }
+  button {
+    background-color: #1F567C;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin: 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Cambria;
+    font-size: 17px;
+  }
+  button:hover {
+    background-color: #acacac;
+    cursor: pointer;
+  }
+  #attractionInfo {
+    position: absolute;
+    top: 425px;
+    left: 2%;
+    width: 40vw;
+  }
+</style>
+<html>
+  <head>
+    <title>Gode Tips - Boston 2017y</title>
+  </head>
+  <body>
+    <div id="header">
+      <a class="weatherwidget-io" href="https://forecast7.com/da/42d36n71d06/boston/" data-label_1="BOSTON" data-mode="Current" data-theme="original" >BOSTON</a>
+    </div>
+    <div id="navigation">
+      <ul>
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="om-boston.html">Om Boston</a></li>
+        <li><a href="billeder.html">Billeder</a></li>
+        <li><a href="gode-tips.html" class="active">Gode Tips</a></li>
+      </ul>
+    </div>
+    <div class="footer">
+      <p class="footer">Lavet af Andreas - 2019</p>
+    </div>
+    <h1 id="titel">Gode Tips til turen</h1>
+    <div id="brødtekst"><p>Her er lidt gode tips og sjov, som du kan hygge dig med, før turen til Boston. <br><br> Klik for eksempel på knappen nedenunder, og få nogle gode tips til seværdigheder, som du kan se.</p></div>
+    <button id="randomMap" onClick="randomMaps();">Tilfældig seværdighed</button>
+    <div id="attractionInfo"><p id="attInfo">Tryk på knappen ovenover og få noget viden om seværdighederne i Boston</p></div>
+    <!-- MAPS -->
+    <div id="mapDiv">
+      <!-- Default map -->
+      <div class="mapcontainer" id="map1" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Boston%2C%20Massachusetts+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+
+      <!-- Fenway Park -->
+      <div class="mapcontainer" id="map2" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Fenway%20Park+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+
+      <!-- Harvard -->
+      <div class="mapcontainer" id="map3" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Harvard%20University+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+
+      <!-- MIT -->
+      <div class="mapcontainer" id="map4" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=MIT+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+
+      <!-- Boston Common -->
+      <div class="mapcontainer" id="map5" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=boston%20common+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+
+      <!-- Museum of Science -->
+      <div class="mapcontainer" id="map6" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=museum%20of%20science%20boston+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+
+      <!-- JFK Presidential Museum -->
+      <div class="mapcontainer" id="map7" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=jfk%20museum+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+
+      <!-- New England Aquarium -->
+      <div class="mapcontainer" id="map8" style="overflow:hidden;width: 700px;position: relative;"><iframe id="gmap" width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=new%20england%20aquarium+(Boston)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+    </div>
+  </body>
+</html>
+<script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function randomMaps() {
+    var mapContainers = document.getElementsByClassName("mapcontainer");
+    for(var i = 0; i < mapContainers.length; i++) {
+      mapContainers[i].style.display = "none";
+    }
+    // Pick random attraction
+    var attrNumber = getRandomInt(2,8);
+    var thisMap = document.getElementById("map" + attrNumber);
+    thisMap.style.display = "block";
+    // Update attraction info
+    if (attrNumber == 2) {
+      document.getElementById("attInfo").innerHTML = "Fenway Park er et legendarisk baseballstadion i Boston i Massachusetts, USA, der i næsten et århundrede har været hjemmebane for MLB-klubben Boston Red Sox. Stadionet har plads til 39.928 tilskuere. Det blev indviet 20. april 1912, og er dermed det ældste stadion i MLB. Det har flere gange siden, senest i 2008, gennemgået renoveringer der har givet stadionet dets nuværende udseende.";
+    }
+    if (attrNumber == 3) {
+      document.getElementById("attInfo").innerHTML = "Harvard University er et anset universitet beliggende i Cambridge, Massachusetts, USA. Universitetet blev grundlagt den 8. september 1636. Universitetet har avlet 75 nobelprismodtagere. Harvard har verdens 3. største bogsamling, kun overgået af British Library og Library of Congress. Desuden er universitetet med i den prestigefulde Ivy League.";
+    }
+    if (attrNumber == 4) {
+      document.getElementById("attInfo").innerHTML = "Massachusetts Institute of Technology (MIT) ligger i den amerikanske delstat Massachusetts og regnes for at være blandt verdens førende tekniske universiteter. MIT vægter især uddannelse indenfor naturvidenskab (ingeniøruddannelser) samt forskning på internationalt topplan. Forskere på MIT har gjort sig fortjent til ikke mindre end 72 nobelpriser";
+    }
+    if (attrNumber == 5) {
+      document.getElementById("attInfo").innerHTML = "Boston Common (også kendt som Common) er en central offentlig park i centrum af Boston, Massachusetts. Det kaldes undertiden fejlagtigt Boston Commons. Det stammer fra 1634 og er den ældste bypark i USA.";
+    }
+    if (attrNumber == 6) {
+      document.getElementById("attInfo").innerHTML = "Museum of Science (MoS) er et videnskabsmuseum og en indendørs zoologisk have i Boston, Massachusetts, beliggende i Science Park, en jordgrund, der spænder over Charles-floden. Sammen med over 700 interaktive udstillinger har museet et antal levende præsentationer i bygningen hver dag sammen med shows på Charles Hayden Planetarium og Mugar Omni Theatre, den eneste kupplede IMAX-skærm i New England. Museet er også et akkrediteret medlem af Association of Zoos and Aquariums (AZA) og er hjemsted for over 100 dyr, hvoraf mange er reddet og rehabiliteret.";
+    }
+    if (attrNumber == 7) {
+      document.getElementById("attInfo").innerHTML = "John F. Kennedy Presidential Library and Museum er præsidentbiblioteket og museet for John Fitzgerald Kennedy (1917–1963), den 35. præsident for De Forenede Stater (1961–1963). Det er beliggende på Columbia Point i Dorchester-kvarteret i Boston, Massachusetts, ved siden af University of Massachusetts i Boston, Edward M. Kennedy-instituttet for De Forenede Staters senat og Massachusetts-arkivet og Commonwealth Museum. Bygningen er designet af arkitekten I. M. Pei og er det officielle arkiv for originale papirer og korrespondance fra Kennedy-administrationen samt særlige organer af offentliggjorte og upublicerede materialer, såsom bøger og papirer af og om Ernest Hemingway.";
+    }
+    if (attrNumber == 8) {
+      document.getElementById("attInfo").innerHTML = "New England Aquarium er et offentligt akvarium beliggende i Boston, Massachusetts. Foruden hovedbygningen i akvariet inkluderer attraktioner på New England Aquarium Simons IMAX Theatre og New England Aquarium Whale Watch, der fungerer fra april til november. Akvariet har mere end 22.000 medlemmer og er vært for mere end 1,3 millioner besøgende hvert år.";
+    }
+    else {
+      return true;
+    }
+  }
+</script>

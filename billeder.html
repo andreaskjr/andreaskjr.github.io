@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<style>
+  body {
+    background-color: #E5E5E5;
+  }
+  #header {
+    background-color: #1F567C;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    width: 100vw;
+    height: 100px;
+    margin: 0px;
+    z-index: 1;
+  }
+  #navigation {
+    background-color: lightgray;
+    position: fixed;
+    top: 100px;
+    width: 100vw;
+    left: 0%;
+    height: 46px;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
+  }
+  .weatherwidget-io {
+    margin: 0px;
+  }
+  div.footer {
+    background-color: lightgray;
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    left: 0%;
+    height: 20px;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
+  }
+  p.footer {
+    color: gray;
+    font-size: 15px;
+    font-family: Cambria;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+  }
+  li {
+    float: left;
+  }
+  li a {
+    display: block;
+    padding: 8px;
+    color: gray;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Cambria;
+  }
+  li a:hover {
+    background-color: #acacac;
+    color: white;
+  }
+  .active {
+    background-color: #1F567C;
+    color: white;
+  }
+  h1 {
+    font-family: Cambria;
+  }
+  #title {
+    top: 140px;
+    left: 2%;
+    position: absolute;
+  }
+  p {
+    font-family: Cambria;
+  }
+  #brødtekst {
+    left: 2%;
+    top: 190px;
+    position: absolute;
+  }
+  .mySlides {
+    display: inline;
+    width: 50vw;
+  }
+  #slideshow {
+    right: 2%;
+    position: absolute;
+    top: 165px;
+  }
+  #buttonLeft {
+    position: absolute;
+    background-color: lightgray;
+    left: 0%;
+    top: 50%;
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    color: gray;
+  }
+  #buttonLeft:hover {
+    background-color: #acacac;
+    color: white;
+  }
+  #buttonRight {
+    position: absolute;
+    background-color: lightgray;
+    right: 0%;
+    top: 50%;
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    color: gray;
+  }
+  #buttonRight:hover {
+    background-color: #acacac;
+    color: white;
+</style>
+<html>
+  <head>
+    <title>Billeder - Boston 2017y</title>
+  </head>
+  <body>
+    <div id="header">
+      <a class="weatherwidget-io" href="https://forecast7.com/da/42d36n71d06/boston/" data-label_1="BOSTON" data-mode="Current" data-theme="original" >BOSTON</a>
+    </div>
+    <div id="navigation">
+      <ul>
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="om-boston.html">Om Boston</a></li>
+        <li><a href="billeder.html" class="active">Billeder</a></li>
+        <li><a href="gode-tips.html">Gode Tips</a></li>
+      </ul>
+    </div>
+    <h1 id="title">Billeder fra Boston</h1>
+    <div id="brødtekst"><p>Her kan du se billeder fra 2017y's tur til Boston</p></div>
+      <div id="slideshow">
+        <img class="mySlides" src="img_MIT.jpg">
+        <img class="mySlides" src="img_airport.jpg">
+        <img class="mySlides" src="img_night.jpg">
+        <img class="mySlides" src="img_ducktour.jpg">
+        <button id="buttonLeft" onclick="plusDivs(-1)">&#10094;</button>
+        <button id="buttonRight" onclick="plusDivs(+1)">&#10095;</button>
+      </div>
+    <div class="footer">
+      <p class="footer">Lavet af Andreas - 2019</p>
+    </div>
+  </body>
+</html>
+<script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+  // Slideshow script
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
+  }
+</script>
