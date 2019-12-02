@@ -80,19 +80,17 @@
   }
   #titel {
     left: 2%;
-    top: 140px;
-    position: absolute;
   }
   #brødtekst {
     left: 2%;
-    top: 190px;
-    position: absolute;
     width: 30vw;
+    margin: 5px;
   }
   #mapDiv {
     right: 2%;
     top: 190px;
     position: absolute;
+    width: 40vw;
   }
   .mapcontainer {
     border-radius: 10px;
@@ -102,9 +100,7 @@
     display: inline;
   }
   #randomMap {
-    position: absolute;
     left: 2%;
-    top: 350px;
   }
   button {
     background-color: #1F567C;
@@ -123,15 +119,18 @@
     cursor: pointer;
   }
   #attractionInfo {
-    position: absolute;
-    top: 425px;
     left: 2%;
     width: 40vw;
+  }
+  #headerBuffer {
+    height: 140px;
+    width: 10px;
   }
 </style>
 <html>
   <head>
     <title>Gode Tips - Boston 2017y</title>
+    <meta charset="utf-8" />
   </head>
   <body>
     <div id="header">
@@ -148,6 +147,7 @@
     <div class="footer">
       <p class="footer">Lavet af Andreas - 2019</p>
     </div>
+    <div id="headerBuffer"></div>
     <h1 id="titel">Gode Tips til turen</h1>
     <div id="brødtekst"><p>Her er lidt gode tips og sjov, som du kan hygge dig med, før turen til Boston. <br><br> Klik for eksempel på knappen nedenunder, og få nogle gode tips til seværdigheder, som du kan se.</p></div>
     <button id="randomMap" onClick="randomMaps();">Tilfældig seværdighed</button>

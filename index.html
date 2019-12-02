@@ -85,14 +85,10 @@
     font-family: Cambria;
   }
   #title {
-    top: 140px;
     left: 2%;
-    position: absolute;
   }
   #hovedtekst {
     border: 3px;
-    position: absolute;
-    top: 190px;
     left: 2%;
     width: 50vw;
     z-index: -1;
@@ -101,7 +97,6 @@
     font-family: Cambria;
   }
   #learnMore {
-    position: absolute;
     display: block;
     clear: both;
     padding: 8px;
@@ -111,17 +106,21 @@
     padding: 14px 16px;
     text-decoration: none;
     font-family: Cambria;
-    top: 400px;
     left: 2%;
+    width: 150px;
   }
   #learnMore:hover {
     background-color: #acacac;
-
+  }
+  #headerBuffer {
+    height: 140px;
+    width: 10px;
   }
 </style>
 <html>
   <head>
     <title>Boston 2017y</title>
+    <meta charset="utf-8" />
   </head>
   <body>
     <div id="header">
@@ -136,6 +135,7 @@
       </ul>
     </div>
     <div class="main">
+      <div id="headerBuffer"></div>
       <h1 id="title">Velkommen til Boston</h1>
       <div id="hovedtekst">
         <p id="afsnit 1">Boston er hovedstad i den amerikanske delstat Massachusetts og den største by i hele New England-området. I 2012 havde byen 636,000 indbyggere. Storboston med forstæder omfatter 4,5 millioner indbyggere. Boston er administrativt centrum i det amerikanske county Suffolk County. <br><br> Klik rundt på denne side for at lære mere om 2017y's rejse til Boston.</p>

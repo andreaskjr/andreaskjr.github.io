@@ -76,17 +76,13 @@
     font-family: Cambria;
   }
   #title {
-    top: 140px;
     left: 2%;
-    position: absolute;
   }
   p {
     font-family: Cambria;
   }
   #brødtekst {
     left: 2%;
-    top: 190px;
-    position: absolute;
   }
   .mySlides {
     display: inline;
@@ -134,10 +130,17 @@
   #buttonRight:hover {
     background-color: #acacac;
     color: white;
+  }
+  #headerBuffer {
+    height: 140px;
+    width: 10px;
+  }
 </style>
+
 <html>
   <head>
     <title>Billeder - Boston 2017y</title>
+    <meta charset="utf-8" />
   </head>
   <body>
     <div id="header">
@@ -151,6 +154,7 @@
         <li><a href="gode-tips">Gode Tips</a></li>
       </ul>
     </div>
+    <div id="headerBuffer"></div>
     <h1 id="title">Billeder fra Boston</h1>
     <div id="brødtekst"><p>Her kan du se billeder fra 2017y's tur til Boston</p></div>
       <div id="slideshow">

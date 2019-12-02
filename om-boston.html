@@ -76,46 +76,34 @@
     font-family: Cambria;
   }
   #title {
-    top: 140px;
     left: 2%;
-    position: absolute;
   }
   #hovedtekst {
     border: 3px;
-    position: absolute;
-    top: 190px;
     left: 2%;
     width: 50vw;
     z-index: -1;
   }
   #hovedtekst2 {
     border: 3px;
-    position: absolute;
-    top: 570px;
     left: 0;
     z-index: -1;
     width: 50vw;
   }
   #hovedtekst3 {
     border: 3px;
-    position: absolute;
-    top: 1480px;
     left: 0;
     z-index: -1;
     width: 50vw;
   }
   #imgSkyline {
-    position: absolute;
     z-index: -1;
     width: 50vw;
-    top: 265px;
   }
   #imgDucktour {
     border: 3px;
-    position: absolute;
     z-index: -1;
     width: 50vw;
-    top: 980px;
     left: 0;
   }
   #aboutTabor {
@@ -126,12 +114,11 @@
     background-color: #1F567C;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+      padding: 14px 16px;
     text-decoration: none;
     font-family: Cambria;
-    top: 1830px;
-    left: 0;
-    margin-bottom: 50px;
+    left: 2%;
+    margin: 10px 0px 100px 0px;
   }
   #aboutTabor:hover {
     background-color: #acacac;
@@ -139,10 +126,15 @@
   p {
     font-family: Cambria;
   }
+  #headerBuffer {
+    height: 140px;
+    width: 10px;
+  }
 </style>
 <html>
   <head>
     <title>Om Boston - Boston 2017y</title>
+    <meta charset="utf-8" />
   </head>
   <body>
     <div id="header">
@@ -156,6 +148,7 @@
         <li><a href="gode-tips">Gode Tips</a></li>
       </ul>
     </div>
+    <div id="headerBuffer"></div>
     <h1 id="title">Om Boston</h1>
     <div id="hovedtekst">
       <p><b>Det overordnede emne for rejsen: Klimabevisthed i USA</b><br><br>Den 30. september 2019 fløj 2017y til Boston, Massachusetts med Icelandair via Reykjavik. Grundet problemer med fly ankom vi først 1. oktober 2019. Vi var i Boston fra 1. oktober til 5. oktober, hvorefter vi tog til Marion, Massachusetts, hvor vi var indtil 11. oktober. Denne hjemmeside vil fokusere på de 5 dage i Boston. <br><br></p>
@@ -181,7 +174,7 @@
       <br><br>
     </div>
     <a id="aboutTabor" href="https://www.taboracademy.org/">Lær mere om Tabor</a>
-    <p><br><br></p>
+    <p><br><br><br><br></p>
 
     <div class="footer">
       <p class="footer">Lavet af Andreas - 2019</p>
