@@ -3,26 +3,28 @@ let img;
 let input;
 let border;
 let slider;
+let landingPage;
 // Indlæs image border effekt
     function preload() {
       border = loadImage('https://i.imgur.com/8FupOgP.png');
+      landingPage = loadImage('https://i.imgur.com/ohSV7nP.png');
     }
 // Setup med "gem billede" knap
     function setup() {
       createCanvas(400,400);
       gennemsigtighed = 0;
       input = createFileInput(handleFile);
-      input.position(400,0);
+      input.position(410,20);
       button = createButton('Save Image');
-      button.position(400,19);
+      button.position(410,50);
       button.mousePressed(SAVE);
       slider = createSlider(0, 255, 255, 0);
       slider.position(410,150);
       slider.style('width', '100px');
+      image(landingPage, 0, 0, width, height);
     }
 // Selve funktionen der laver billedet om til sort/hvid og smider border ovenpå.
     function draw() {
-      background(255);
       if (img) {
         image(img, 0, 0, width, height);
         c = map(mouseX,0,483,0,1);

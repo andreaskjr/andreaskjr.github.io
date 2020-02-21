@@ -4,4 +4,10 @@ html, body {
 }
 canvas {
   display: block;
+  margin: 5px;
+}
+p {
+  position: absolute;
+  left: 410px;
+  top: 115px;
 }
