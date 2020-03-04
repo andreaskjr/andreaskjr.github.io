@@ -12,7 +12,6 @@ let landingPage;
 // Setup med "gem billede" knap
     function setup() {
       createCanvas(400,400);
-      gennemsigtighed = 0;
       input = createFileInput(handleFile);
       input.position(410,20);
       button = createButton('Save Image');
@@ -56,11 +55,3 @@ function SAVE() {
   text('Gammeldags Billede Generator', 200, 390);
   saveCanvas('oldImage', 'jpg');
 }
-// function mouseClicked() {
-//  if (gennemsigtighed > 241) {
-//    return true;
-//  } else {
-//    gennemsigtighed = gennemsigtighed + 15;
-//    console.log(gennemsigtighed);
-//  }
-//}
