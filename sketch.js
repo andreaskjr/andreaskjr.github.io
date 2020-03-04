@@ -43,6 +43,7 @@ function handleFile(file) {
   if (file.type === 'image') {
     img = createImg(file.data,'');
     img.hide();
+    landingPage.hide();
   } else {
     img = null;
   }
