@@ -20,9 +20,6 @@ let landingPage;
       slider = createSlider(0, 255, 255, 0);
       slider.position(410,150);
       slider.style('width', '100px');
-      updateButton = createButton('Update');
-      updateButton.position(410,180);
-      updateButton.mousePressed(update);
       image(landingPage, 0, 0, width, height);
     }
 // Selve funktionen der laver billedet om til sort/hvid og smider border ovenpå.
@@ -39,7 +36,6 @@ let landingPage;
           }
         }
         border.updatePixels();
-        noLoop();
       }
     }
 // Fil kan uploades
@@ -59,8 +55,4 @@ function SAVE() {
   textFont('Harrington');
   text('Gammeldags Billede Generator', 200, 390);
   saveCanvas('oldImage', 'jpg');
-}
-
-function update() {
-    loop();
 }
