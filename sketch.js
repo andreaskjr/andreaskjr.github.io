@@ -39,6 +39,7 @@ let landingPage;
           }
         }
         border.updatePixels();
+        noLoop();
       }
     }
 // Fil kan uploades
@@ -62,5 +63,4 @@ function SAVE() {
 
 function update() {
     loop();
-    noLoop();
 }
